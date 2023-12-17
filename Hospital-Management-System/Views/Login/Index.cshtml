@@ -1,0 +1,33 @@
+﻿<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Views Scripts/login.js")"></script>
+</head>
+
+@model Hospital_Management_System.Models.Accounts
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <br />
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <br />
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+
+    <p class="field-validation-error">@ViewBag.Message</p>
+    <input type="submit" class="btn btn-primary" value="Login" />
+    <input type="button" id="resetBtn" class="btn btn-secondary" value="Reset" />
+}

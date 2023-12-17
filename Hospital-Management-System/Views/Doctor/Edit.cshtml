@@ -1,0 +1,61 @@
+﻿<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Views Scripts/doctor_edit.js")"></script>
+</head>
+
+@model Hospital_Management_System.Models.Appointments
+
+@{
+    ViewBag.Title = "Edit Treatment Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Doctor", FormMethod.Post))
+{
+    <b class="submission-feedback">@ViewBag.Message</b>
+
+    @Html.HiddenFor(m => m.AppointmentID)
+    @Html.HiddenFor(m => m.AppointmentDateTime)
+    @Html.HiddenFor(m => m.PatientRemarks)
+
+    <table>
+        <tr>
+            <td><label for="id">ID: </label></td>
+            <td>@ViewBag.item.AppointmentID</td>
+        </tr>
+        <tr>
+            <td><label for="date">Date: </label></td>
+            <td>@ViewBag.item.AppointmentDateTime.ToString("MM/dd/yyyy")</td>
+        </tr>
+        <tr>
+            <td><label for="time">Time: </label></td>
+            <td>@ViewBag.item.AppointmentDateTime.ToString("hh:mm tt")</td>
+        </tr>
+        <tr>
+            <td><label for="patientRemarks">Patient Remarks: </label></td>
+            <td>@(string.IsNullOrEmpty(ViewBag.item.PatientRemarks) ? "N/A" : ViewBag.item.PatientRemarks)</td>
+        </tr>
+        <tr>
+            <td><label for="diagnosis">Diagnosis: </label></td>
+            <td>@Html.TextArea("Diagnosis")</td>
+        </tr>
+        <tr>
+            <td><label for="clinicRemarks">Clinic Remarks: </label></td>
+            <td>@Html.TextArea("ClinicRemarks")</td>
+        </tr>
+        <tr>
+            <td><label for="therapy">Therapy: </label></td>
+            <td>@Html.TextArea("Therapy")</td>
+        </tr>
+    </table>
+
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Update" />
+    <input type="button" id="resetBtn" class="btn btn-primary" value="Reset" />
+}
+
+<br />
+
+<a href="@Url.Action("Index", "Doctor")" class="btn btn-secondary">Back</a>

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2 id="title">@ViewBag.Title</h2>
+
+<hr />
+
+<main aria-labelledby="title">
+    <h4>Appointments</h4>
+
+    <div>
+        <table class="table table-striped fixed-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Doctor</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (ViewBag.AppointmentList.Count == 0)
+                {
+                    <tr>
+                        <td colspan="6" style="text-align: center;">
+                            <p>No scheduled appointments.</p>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in ViewBag.AppointmentList)
+                    {
+                        <tr>
+                            <td>@item.AppointmentID</td>
+                            <td>@item.AppointmentDateTime.ToString("MM/dd/yyyy")</td>
+                            <td>@item.AppointmentDateTime.ToString("hh:mm tt")</td>
+                            <td>@(string.IsNullOrEmpty(item.Doctor?.FirstName) && string.IsNullOrEmpty(item.Doctor?.LastName) ? "Unassigned" : string.Format("{0} {1}", item.Doctor?.FirstName, item.Doctor?.LastName))</td>
+                            <td>
+                                <div class="longtext" title="@item.PatientRemarks" style="overflow: hidden; text-overflow: ellipsis;">
+                                    @(string.IsNullOrEmpty(item.PatientRemarks) ? "N/A" : item.PatientRemarks)
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <a href="@Url.Action("Add", "Patient")" class="btn btn-primary">Add</a>
+</main>

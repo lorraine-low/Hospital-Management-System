@@ -1,0 +1,106 @@
+﻿<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Views Scripts/admin_add.js")"></script>
+</head>
+
+@model Hospital_Management_System.Models.Accounts
+
+@{
+    ViewBag.Title = "Add Record";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Add", "Admin", FormMethod.Post))
+{
+    <b class="submission-feedback">@ViewBag.Message</b>
+
+    <table>
+        <tr>
+            <td><label for="accountType">Account Type: </label></td>
+            <td>
+                @Html.DropDownListFor(m => m.AccountType, new SelectList(ViewBag.accountTypeList, "Key", "Value"), "Please Select", new { id = "accountTypeSelect" })
+                @Html.ValidationMessageFor(model => model.AccountType)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password: </label></td>
+            <td>
+                @Html.TextBox("Password")
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="firstName">First Name: </label></td>
+            <td>
+                @Html.TextBox("FirstName")
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="lastName">Last Name: </label></td>
+            <td>
+                @Html.TextBox("LastName")
+                @Html.ValidationMessageFor(model => model.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="gender">Gender: </label></td>
+            <td>
+                @Html.DropDownListFor(m => m.Gender, new SelectList(ViewBag.genderList, "Key", "Value"), "Please Select")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="dob">Date of Birth: </label></td>
+            <td>
+                <input type="date" id="dob" name="dob" max="@DateTime.Now.ToString("yyyy-MM-dd")">
+                @Html.ValidationMessageFor(model => model.Dob)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email: </label></td>
+            <td>
+                @Html.TextBox("Email")
+                @Html.ValidationMessageFor(model => model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="phoneNo">Phone No.: </label></td>
+            <td>
+                @Html.TextBox("PhoneNo")
+                @Html.ValidationMessageFor(model => model.PhoneNo)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="address">Address: </label></td>
+            <td>
+                @Html.TextBox("Address")
+                @Html.ValidationMessageFor(model => model.Address)
+            </td>
+        </tr>
+        <tr id="specializationRow" style="display:none">
+            <td><label for="specialization">Specialization: </label></td>
+            <td>
+                @Html.TextBoxFor(model => model.Doctor.Specialization)
+                @Html.ValidationMessageFor(model => model.Doctor.Specialization)
+            </td>
+        </tr>
+        <tr id="bloodGroupRow" style="display:none">
+            <td><label for="bloodgroup">Blood Group:</label></td>
+            <td>
+                @Html.DropDownListFor(model => model.Patient.BloodGroup, new SelectList(ViewBag.bloodList, "Key", "Value", ViewBag.BloodGroup), "Please Select")
+                @Html.ValidationMessageFor(model => model.Patient.BloodGroup)
+            </td>
+        </tr>
+    </table>
+
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Add" />
+    <input type="button" id="resetBtn" class="btn btn-primary" value="Reset" />
+}
+
+<br />
+
+<a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Back</a>

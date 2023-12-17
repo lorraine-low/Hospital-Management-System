@@ -1,0 +1,45 @@
+﻿<head>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Message = "The official system for managing St. Jude's Women & Children Hospital's operations.";
+}
+
+<main>
+    <section class="jumbotron text-center" aria-labelledby="applicationTitle">
+        <h1 id="applicationTitle">SJWC Hospital Management System</h1>
+        <p class="lead">@ViewBag.Message</p>
+        <hr />
+        <p>
+            Providing patients and staff a platform for efficient management to
+            bring forward our commitment to offering quality care and service to our community.
+        </p>
+        <img src="~/Images/cover.jpg" class="responsive-img" />
+    </section>
+    <br />
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="contactTitle">
+            <h2 id="contactTitle">Contact Us</h2>
+            <p>
+                To reach us for any queries or feedback about our hospital services, please click the button below. We are always here to assist you.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Contact", "Home")">Go to Contact &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="servicesTitle">
+            <h2 id="servicesTitle">Services</h2>
+            <p>
+                Learn more about the various healthcare services provided by our hospital. Click on the button below to discover the range of services we offer.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("ServicesIndex", "Home")">Go to Services &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="loginTitle">
+            <h2 id="loginTitle">Web Portal</h2>
+            <p>
+                Login to access our web-hosted platform. The platform allows you to manage hospital services, appointments, and other healthcare-related tasks online.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Index", "Login")">Go to Login &raquo;</a></p>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,153 @@
+﻿<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Views Scripts/admin_edit.js")"></script>
+</head>
+
+
+@model Hospital_Management_System.Models.Accounts
+
+@{
+    ViewBag.Title = "Edit Details";
+}
+
+<h2>@ViewBag.Title</h2>
+<i>*Account ID and Account Type cannot be changed. If you wish to do so, please delete the existing account and add a new profile.</i>
+
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post))
+{
+    <b class="submission-feedback">@ViewBag.Message</b>
+
+    <table>
+        <tr>
+            <td><label for="id">Account ID: </label></td>
+            <td>@ViewBag.item.AccountID</td>
+        </tr>
+        <tr>
+            <td><label for="accounttype">Account Type:  </label></td>
+            <td>@ViewBag.item.AccountType</td>
+        </tr>
+        <tr>
+            <td><label for="password">Password: </label></td>
+            <td>
+                @Html.TextBox("Password", (object)ViewBag.item?.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="firstname">First Name: </label></td>
+            <td>
+                @Html.TextBox("FirstName", (object)ViewBag.item?.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="lastname">Last Name: </label></td>
+            <td>
+                @Html.TextBox("LastName", (object)ViewBag.item?.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="gender">Gender: </label></td>
+            <td>
+                @Html.DropDownListFor(m => m.Gender, new SelectList(ViewBag.genderList, "Key", "Value"), "Please Select")
+                @Html.ValidationMessageFor(model => model.Gender)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="dob">Date of Birth: </label></td>
+            <td>
+                <input type="date" id="dob" name="dob" max="@DateTime.Now.ToString("yyyy-MM-dd")">
+                @Html.ValidationMessageFor(model => model.Dob)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email: </label></td>
+            <td>
+                @Html.TextBox("Email", (object)ViewBag.item?.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="phoneno">Phone No.: </label></td>
+            <td>
+                @Html.TextBox("PhoneNo", (object)ViewBag.item?.PhoneNo)
+                @Html.ValidationMessageFor(model => model.PhoneNo)
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Address: </label></td>
+            <td>
+                @Html.TextBox("Address", (object)ViewBag.item?.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </td>
+        </tr>
+        @if (ViewBag.IsDoctor)
+        {
+            <tr>
+                <td><label for="specialization">Specialization: </label></td>
+                <td>
+                    @Html.TextBoxFor(model => model.Doctor.Specialization, (string)ViewBag.Specialization)
+                    @Html.ValidationMessageFor(model => model.Doctor.Specialization)
+                </td>
+            </tr>
+        }
+        @if (ViewBag.IsPatient)
+        {
+            <tr>
+                <td><label for="bloodgroup">Blood Group:</label></td>
+                <td>
+                    @Html.DropDownListFor(model => model.Patient.BloodGroup, new SelectList(ViewBag.bloodList, "Key", "Value", ViewBag.BloodGroup), "Please Select")
+                    @Html.ValidationMessageFor(model => model.Patient.BloodGroup)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Update" />
+    <input type="button" id="resetBtn" class="btn btn-primary" value="Reset" />
+    <input type="button" id="deleteBtn" class="btn btn-danger" value="Delete" />
+}
+
+<br />
+
+<a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Back</a>
+
+<script>
+        function resetForm() {
+    $('input[type="text"], input[type="password"]').val('');
+    $('select').prop('selectedIndex', 0);
+    $('.field-validation-error').empty();
+}
+
+function handleDelete() {
+    if (confirm('Are you sure you want to delete this account?')) {
+        var data = {
+            id: '@ViewBag.item.AccountID',
+            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+        };
+
+        $.ajax({
+            url: '@Url.Action("Delete", "Admin")',
+            type: 'POST',
+            data: data,
+            success: function () {
+                window.location.href = '@Url.Action("Index", "Admin")';
+            }
+        });
+    }
+}
+
+$(document).ready(function () {
+    $('#resetBtn').click(function () {
+        resetForm();
+    });
+
+    $('#deleteBtn').click(function () {
+        handleDelete();
+    });
+});
+
+</script>

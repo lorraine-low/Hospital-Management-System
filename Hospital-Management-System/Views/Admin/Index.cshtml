@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2 id="title">@ViewBag.Title</h2>
+
+<hr />
+
+<main aria-labelledby="title">
+    <h4>Doctor List</h4>
+    <div>
+        <table class="table table-striped fixed-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.DoctorList)
+                {
+                    <tr>
+                        <td>@item.AccountID</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Gender</td>
+                        <td>@item.Email</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.AccountID })
+                            @Html.ActionLink("Detail", "Detail", new { id = item.AccountID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <h4>Patient List</h4>
+    <div>
+        <table class="table table-striped fixed-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.PatientList)
+                {
+                    <tr>
+                        <td>@item.AccountID</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Gender</td>
+                        <td>@item.Email</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.AccountID })
+                            @Html.ActionLink("Detail", "Detail", new { id = item.AccountID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a href="@Url.Action("Add", "Admin")" class="btn btn-primary">Add Record</a>
+
+    <br />
+    <hr />
+    <br />
+
+    <h4>Appointment List</h4>
+    <div>
+        <p>List of appointments available for allocation to doctors.</p>
+        <table class="table table-striped fixed-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Doctor</th>
+                    <th>Patient's Remarks</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (ViewBag.AppointmentList.Count == 0)
+                {
+                    <tr>
+                        <td colspan="6" style="text-align: center;">
+                            <p>No available appointments for assignment.</p>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in ViewBag.AppointmentList)
+                    {
+                        <tr>
+                            <td>@item.AppointmentID</td>
+                            <td>@item.AppointmentDateTime.ToString("MM/dd/yyyy")</td>
+                            <td>@item.AppointmentDateTime.ToString("hh:mm tt")</td>
+                            <td>@(string.IsNullOrEmpty(item.Doctor?.FirstName) && string.IsNullOrEmpty(item.Doctor?.LastName) ? "Unassigned" : string.Format("{0} {1}", item.Doctor?.FirstName, item.Doctor?.LastName))</td>
+                            <td>
+                                <div class="longtext" title="@item.PatientRemarks">
+                                    @(string.IsNullOrEmpty(item.PatientRemarks) ? "N/A" : item.PatientRemarks)
+                                </div>
+                            </td>
+                            <td>
+                                @Html.ActionLink("Assign", "Assign", new { id = item.AppointmentID })
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

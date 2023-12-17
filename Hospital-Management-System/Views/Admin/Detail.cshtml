@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    <li><strong>Account ID:</strong> @ViewBag.item.AccountID</li>
+    <li><strong>Account Type:</strong> @ViewBag.item.AccountType</li>
+    <li><strong>First Name:</strong> @ViewBag.item.FirstName</li>
+    <li><strong>Last Name:</strong> @ViewBag.item.LastName</li>
+    <li><strong>Gender:</strong> @ViewBag.item.Gender</li>
+    <li><strong>Date of Birth:</strong> @ViewBag.item.Dob</li>
+    <li><strong>Email:</strong> @ViewBag.item.Email</li>
+    <li><strong>Phone No.:</strong> @ViewBag.item.PhoneNo</li>
+    <li><strong>Address:</strong> @ViewBag.item.Address</li>
+
+    @if (ViewBag.IsDoctor)
+    {
+        <li><strong>Specialization:</strong> @ViewBag.Specialization</li>
+    }
+    @if (ViewBag.IsPatient)
+    {
+        <li><strong>Blood Type:</strong> @ViewBag.BloodGroup</li>
+    }
+</ul>
+
+<a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Back</a>

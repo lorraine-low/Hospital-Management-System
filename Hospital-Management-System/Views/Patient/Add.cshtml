@@ -1,0 +1,47 @@
+﻿<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Views Scripts/patient_add.js")"></script>
+</head>
+
+@model Hospital_Management_System.Models.Appointments
+
+@{
+    ViewBag.Title = "Schedule an Appointment";
+    var tomorrow = DateTime.Now.AddDays(1);
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Add", "Patient", FormMethod.Post))
+{
+    <b class="submission-feedback">@ViewBag.Message</b>
+
+    <table>
+        <tr>
+            <td><label for="appointmentDate">Date:</label></td>
+            <td>
+                <input type="date" id="appointmentDate" name="AppointmentDate" value="@tomorrow.ToString("yyyy-MM-dd")" min="@tomorrow.ToString("yyyy-MM-dd")">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="appointmentTime">Time: </label></td>
+            <td>
+                <input type="time" id="appointmentTime" name="AppointmentTime" value="08:00" min="08:00" max="20:30" />
+            </td>
+        </tr>
+        <tr>
+            <td><label for="patientRemarks">Remarks: </label></td>
+            <td>
+                @Html.TextArea("PatientRemarks")
+            </td>
+        </tr>
+    </table>
+
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Add" />
+}
+
+<br />
+
+<a href="@Url.Action("Index", "Patient")" class="btn btn-secondary">Back</a>

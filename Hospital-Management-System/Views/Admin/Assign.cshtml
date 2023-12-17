@@ -1,0 +1,50 @@
+﻿
+@model Hospital_Management_System.Models.Appointments
+
+@{
+    ViewBag.Title = "Appointment Assignment";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Assign", "Admin", FormMethod.Post))
+{
+    <b class="submission-feedback">@ViewBag.Message</b>
+
+    @Html.HiddenFor(m => m.AppointmentID)
+    @Html.HiddenFor(m => m.AppointmentDateTime)
+    @Html.HiddenFor(m => m.PatientRemarks)
+
+    <table>
+        <tr>
+            <td><label for="id">ID: </label></td>
+            <td>@ViewBag.item.AppointmentID</td>
+        </tr>
+        <tr>
+            <td><label for="date">Date: </label></td>
+            <td>@ViewBag.item.AppointmentDateTime.ToString("MM/dd/yyyy")</td>
+        </tr>
+        <tr>
+            <td><label for="time">Time: </label></td>
+            <td>@ViewBag.item.AppointmentDateTime.ToString("hh:mm tt")</td>
+        </tr>
+        <tr>
+            <td><label for="patientRemarks">Remarks: </label></td>
+            <td>@(string.IsNullOrEmpty(ViewBag.item.PatientRemarks) ? "N/A" : ViewBag.item.PatientRemarks)</td>
+        </tr>
+        <tr>
+            <td><label for="doctor">Doctor: </label></td>
+            <td>
+                @Html.DropDownListFor(m => m.Doctor.DoctorID, new SelectList(ViewBag.DoctorList, "Key", "Value"), "Please Select")
+            </td>
+        </tr>
+    </table>
+
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Save" />
+}
+
+<br />
+
+<a href="@Url.Action("Index", "Admin")" class="btn btn-secondary">Back</a>

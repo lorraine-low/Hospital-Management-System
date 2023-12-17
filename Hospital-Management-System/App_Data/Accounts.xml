@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Accounts>
+  <Account>
+    <AccountID>10000001</AccountID>
+    <Password>Admin@123</Password>
+    <AccountType>Admin</AccountType>
+    <FirstName>Admin</FirstName>
+    <LastName />
+    <Gender />
+    <Dob>0001-01-01T00:00:00</Dob>
+    <Email>admin1@sjwc.org.uk</Email>
+    <PhoneNo />
+    <Address />
+    <Admin>
+      <Role>Main Administrator</Role>
+    </Admin>
+  </Account>
+  <Account>
+    <AccountID>30000001</AccountID>
+    <Password>Patient1!</Password>
+    <AccountType>Patient</AccountType>
+    <FirstName>Emily</FirstName>
+    <LastName>Johnson</LastName>
+    <Gender>Female</Gender>
+    <Dob>1997-05-12T00:00:00</Dob>
+    <Email>emily97@gmail.com</Email>
+    <PhoneNo>07123456789</PhoneNo>
+    <Address>45 Rose Gardens, Glasgow G2 8AA</Address>
+    <Patient>
+      <BloodGroup>O+</BloodGroup>
+    </Patient>
+  </Account>
+  <Account>
+    <AccountID>30000002</AccountID>
+    <Password>Patient2!</Password>
+    <AccountType>Patient</AccountType>
+    <FirstName>James</FirstName>
+    <LastName>Smith</LastName>
+    <Gender>Male</Gender>
+    <Dob>1980-08-25T00:00:00</Dob>
+    <Email>jsmith@yahoo.co.uk</Email>
+    <PhoneNo>07890123456</PhoneNo>
+    <Address>22 Oak Street, London SW1A 1AA</Address>
+    <Patient>
+      <BloodGroup>A-</BloodGroup>
+    </Patient>
+  </Account>
+  <Account>
+    <AccountID>30000003</AccountID>
+    <Password>Patient3!</Password>
+    <AccountType>Patient</AccountType>
+    <FirstName>Sophie</FirstName>
+    <LastName>Brown</LastName>
+    <Gender>Female</Gender>
+    <Dob>1995-03-18T00:00:00</Dob>
+    <Email>sophiebrownn@hotmail.com</Email>
+    <PhoneNo>07987654321</PhoneNo>
+    <Address>10 Park Lane, Manchester M2 4WD</Address>
+    <Patient>
+      <BloodGroup>B+</BloodGroup>
+    </Patient>
+  </Account>
+  <Account>
+    <AccountID>30000004</AccountID>
+    <Password>Patient4!</Password>
+    <AccountType>Patient</AccountType>
+    <FirstName>Daniel</FirstName>
+    <LastName>Wilson</LastName>
+    <Gender>Male</Gender>
+    <Dob>1972-11-08T00:00:00</Dob>
+    <Email>daniel.wilson@gmail.com</Email>
+    <PhoneNo>07543210987</PhoneNo>
+    <Address>5 Primrose Avenue, Belfast BT1 1FF</Address>
+    <Patient>
+      <BloodGroup>AB-</BloodGroup>
+    </Patient>
+  </Account>
+  <Account>
+    <AccountID>30000005</AccountID>
+    <Password>Patient5!</Password>
+    <AccountType>Patient</AccountType>
+    <FirstName>Olivia</FirstName>
+    <LastName>Miller</LastName>
+    <Gender>Female</Gender>
+    <Dob>1988-06-07T00:00:00</Dob>
+    <Email>olivia88@gmail.com</Email>
+    <PhoneNo>07451234567</PhoneNo>
+    <Address>15 High Street, Cardiff CF10 1BB</Address>
+    <Patient>
+      <BloodGroup>O+</BloodGroup>
+    </Patient>
+  </Account>
+  <Account>
+    <AccountID>30000006</AccountID>
+    <Password>Patient6!</Password>
+    <AccountType>Patient</AccountType>
+    <FirstName>Laurent</FirstName>
+    <LastName>Low</LastName>
+    <Gender>Male</Gender>
+    <Dob>2007-02-08T00:00:00</Dob>
+    <Email>laurentlow777@gmail.com</Email>
+    <PhoneNo>07451234527</PhoneNo>
+    <Address>Noob Street</Address>
+    <Patient>
+      <BloodGroup>A+</BloodGroup>
+    </Patient>
+  </Account>
+  <Account>
+    <AccountID>20000001</AccountID>
+    <Password>Doctor1!</Password>
+    <AccountType>Doctor</AccountType>
+    <FirstName>William</FirstName>
+    <LastName>Parker</LastName>
+    <Gender>Male</Gender>
+    <Dob>1989-03-08T00:00:00</Dob>
+    <Email>william.parker@sjwc.org.uk</Email>
+    <PhoneNo>01316667777</PhoneNo>
+    <Address>30 Hillside Terrace, Aberdeen AB1 2XY</Address>
+    <Doctor>
+      <Specialization>General Medicine</Specialization>
+    </Doctor>
+  </Account>
+  <Account>
+    <AccountID>20000002</AccountID>
+    <Password>Doctor2!</Password>
+    <AccountType>Doctor</AccountType>
+    <FirstName>Emily</FirstName>
+    <LastName>Anderson</LastName>
+    <Gender>Female</Gender>
+    <Dob>1985-07-15T00:00:00</Dob>
+    <Email>emily.anderson@sjwc.org.uk</Email>
+    <PhoneNo>01412223333</PhoneNo>
+    <Address>15 Greenhill Street, Glasgow G1 3SL</Address>
+    <Doctor>
+      <Specialization>Cardiology</Specialization>
+    </Doctor>
+  </Account>
+  <Account>
+    <AccountID>20000003</AccountID>
+    <Password>Doctor3!</Password>
+    <AccountType>Doctor</AccountType>
+    <FirstName>Alexander</FirstName>
+    <LastName>MacDonald</LastName>
+    <Gender>Male</Gender>
+    <Dob>1976-11-22T00:00:00</Dob>
+    <Email>alexander.macdonald@sjwc.org.uk</Email>
+    <PhoneNo>01555444333</PhoneNo>
+    <Address>42 Royal Crescent, Edinburgh EH7 5AB</Address>
+    <Doctor>
+      <Specialization>Orthopedics</Specialization>
+    </Doctor>
+  </Account>
+  <Account>
+    <AccountID>20000004</AccountID>
+    <Password>Doctor4!</Password>
+    <AccountType>Doctor</AccountType>
+    <FirstName>Sophie</FirstName>
+    <LastName>Murray</LastName>
+    <Gender>Female</Gender>
+    <Dob>1982-05-10T00:00:00</Dob>
+    <Email>sophie.murray@sjwc.org.uk</Email>
+    <PhoneNo>01788777666</PhoneNo>
+    <Address>18 Riverside Drive, Dundee DD1 4NR</Address>
+    <Doctor>
+      <Specialization>Dermatology</Specialization>
+    </Doctor>
+  </Account>
+  <Account>
+    <AccountID>20000005</AccountID>
+    <Password>Doctor5!</Password>
+    <AccountType>Doctor</AccountType>
+    <FirstName>Robert</FirstName>
+    <LastName>Fletcher</LastName>
+    <Gender>Male</Gender>
+    <Dob>1990-09-05T00:00:00</Dob>
+    <Email>robert.fletcher@sjwc.org.uk</Email>
+    <PhoneNo>01666777888</PhoneNo>
+    <Address>25 Castle Street, Inverness IV1 1RD</Address>
+    <Doctor>
+      <Specialization>Pediatrics</Specialization>
+    </Doctor>
+  </Account>
+</Accounts>

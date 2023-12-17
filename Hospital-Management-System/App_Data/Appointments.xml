@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Appointments>
+  <Appointment>
+    <AppointmentID>70000001</AppointmentID>
+    <Patient>
+      <PatientID>30000001</PatientID>
+      <FirstName>Emily</FirstName>
+      <LastName>Johnson</LastName>
+    </Patient>
+    <Doctor>
+      <DoctorID>20000001</DoctorID>
+      <FirstName>William</FirstName>
+      <LastName>Parker</LastName>
+    </Doctor>
+    <AppointmentDateTime>2023-07-27T08:15:00</AppointmentDateTime>
+    <PatientRemarks>Booking an appointment for sore throat</PatientRemarks>
+    <Diagnosis>Streptococcal pharyngitis</Diagnosis>
+    <ClinicRemarks>The patient is experiencing a case of bacterial strep throat, with reported pain starting on July 19th. They also have white spots and inflammation present on their tonsils.</ClinicRemarks>
+    <Therapy>A course of amoxicillin for 10 days, once a day after a meal.</Therapy>
+  </Appointment>
+  <Appointment>
+    <AppointmentID>70000002</AppointmentID>
+    <Patient>
+      <PatientID>30000006</PatientID>
+      <FirstName>Laurent</FirstName>
+      <LastName>Low</LastName>
+    </Patient>
+    <Doctor>
+      <DoctorID>20000001</DoctorID>
+      <FirstName>William</FirstName>
+      <LastName>Parker</LastName>
+    </Doctor>
+    <AppointmentDateTime>2023-12-23T10:00:00</AppointmentDateTime>
+    <PatientRemarks>I am too nub, need appointment for therapy. Cure my noobness plxxxxx ui give 500 robux</PatientRemarks>
+    <Diagnosis>certified noob :(</Diagnosis>
+    <ClinicRemarks>patient was too... noob.,,,</ClinicRemarks>
+    <Therapy>give pro training... counselling services</Therapy>
+  </Appointment>
+  <Appointment>
+    <AppointmentID>70000003</AppointmentID>
+    <Patient>
+      <PatientID>30000006</PatientID>
+      <FirstName>Laurent</FirstName>
+      <LastName>Low</LastName>
+    </Patient>
+    <Doctor>
+      <DoctorID>-1</DoctorID>
+      <FirstName></FirstName>
+      <LastName></LastName>
+    </Doctor>
+    <AppointmentDateTime>2023-12-18T08:00:00</AppointmentDateTime>
+    <PatientRemarks>lorraine is noob</PatientRemarks>
+    <Diagnosis />
+    <ClinicRemarks />
+    <Therapy />
+  </Appointment>
+</Appointments>
