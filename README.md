@@ -70,8 +70,7 @@ Admin Dashboard
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/2856c40b-879a-4e1c-a395-7c16e0e3310f)
 
 Doctor Dashboard
-![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/89cf4821-82aa-4333-ba66-5e1bed1dcad6)
+![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/8c248621-abf7-482f-8e6a-114e59a2328b)
 
 Patient Dashboard
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/de35fc57-126f-426e-adbe-a9db37282cab)
-
