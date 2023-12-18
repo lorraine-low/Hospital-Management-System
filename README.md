@@ -51,3 +51,4 @@ The SJWC Hospital Management System is a web-based application developed using A
 
 ## Screenshots
 <to include>
+![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/bb7d2f47-b967-44c3-be75-0247235b077c)
