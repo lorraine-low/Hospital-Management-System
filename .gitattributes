@@ -3,6 +3,7 @@
 ###############################################################################
 * text=auto
 
+# Exclude Javascript files from linguistic analysis
 Scripts/* linguist-vendored
 *.js linguist-vendored
 
