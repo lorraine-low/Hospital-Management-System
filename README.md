@@ -51,26 +51,26 @@ The SJWC Hospital Management System is a web-based application developed using A
 
 ## Screenshots
 
-Home
+**Home**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/bb7d2f47-b967-44c3-be75-0247235b077c)
 
-About
+**About**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/0923f72f-433d-4b79-8b2f-1f5e77d9f949)
 
-Services
+**Services**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/8f0160c9-3361-4998-b504-b1ddb04bdbcf)
 
-Contact
+**Contact**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/030d8589-478a-426f-bb43-8b5f94431be8)
 
-Login
+**Login**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/322fa14f-e449-4726-846b-455589026a76)
 
-Admin Dashboard
+**Admin Dashboard**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/2856c40b-879a-4e1c-a395-7c16e0e3310f)
 
-Doctor Dashboard
+**Doctor Dashboard**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/8c248621-abf7-482f-8e6a-114e59a2328b)
 
-Patient Dashboard
+**Patient Dashboard**
 ![image](https://github.com/lorraine-low/Hospital-Management-System/assets/125891002/de35fc57-126f-426e-adbe-a9db37282cab)
